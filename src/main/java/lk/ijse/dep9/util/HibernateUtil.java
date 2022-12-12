@@ -1,5 +1,6 @@
 package lk.ijse.dep9.util;
 
+import lk.ijse.dep9.dto.StudentDTO;
 import lk.ijse.dep9.entity.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -19,7 +20,7 @@ public class HibernateUtil {
                 .build();
 
         Metadata metadata = new MetadataSources(standardRegistry)
-                .addAnnotatedClasses(Student.class)
+                .addAnnotatedClasses(Student.class, StudentDTO.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
